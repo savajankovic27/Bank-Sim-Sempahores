@@ -1,0 +1,5 @@
+# Bank Transaction Simulator Using C Semaphores and Threads
+
+This project implements FreeRTOS-based inter-task synchronization using binary semaphores on the RDDRONE-FMUK66 board. The system consists of a timer-driven producer task and a consumer task, where the producer releases a semaphore upon timer expiration, allowing the consumer to execute. The project was developed and debugged in Linux using MCUXpresso IDE, with serial debugging enabled via the FreeRTOS debug console. Challenges included ensuring proper semaphore initialization, task priority management, and avoiding deadlocks caused by premature task deletions.
+
+To resolve these issues, I refined the task scheduling by adjusting semaphore handling, ensuring tasks were properly prioritized, and using FreeRTOS synchronization primitives efficiently. Additionally, I eliminated redundant loops in the timer callback, preventing the system from stalling. Through this, I gained a deeper understanding of real-time task execution, interrupt-based synchronization, and debugging FreeRTOS applications on embedded Linux environments.
